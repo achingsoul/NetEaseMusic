@@ -19,10 +19,17 @@ $(function(){
     })
 
     let audio = document.createElement('audio')
-    audio.src = 'http://dl.stream.qqmusic.qq.com/C400003TgAeV2YzOCj.m4a?vkey=604D98611E2734372ABD52F376CBB9CDB588A8EAEB721D13F1F9F51FE07694FAF2456438BBD2189A2E0AA788B78551E33CC4A96311A4FFC6&guid=5946636130&uin=345004536&fromtag=66'
+    audio.src = 'http://osb6hhg60.bkt.clouddn.com/%E6%96%AF%E5%BE%B7%E5%93%A5%E5%B0%94%E6%91%A9%E6%83%85%E4%BA%BA-%E9%99%88%E5%A5%95%E8%BF%85.m4a'
     audio.oncanplay = function(){
         audio.play()
+        $('.disc-container').addClass('playing')
     }
-    $('.disc-container').addClass('playing')
-
+    $('.icon-pause').on('click',function(){
+        audio.pause()
+        $('.disc-container').removeClass('playing')
+    })
+    $('.icon-play').on('click',function(){
+        audio.play()
+        $('.disc-container').addClass('playing')
+    })
 })
